@@ -1,0 +1,139 @@
+.contactpage-container {
+  background: url(./contactbg3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-container:focus-within {
+  box-shadow: 0px 0.2em 2.5em #c4c4c4;
+  transform: scale(1.025);
+}
+.form-label {
+  text-transform: uppercase;
+  color: rgb(6, 228, 91);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 85, 223, 0.7665441176470589) 0%,
+    rgba(8, 95, 128, 1) 52%,
+    rgba(255, 255, 255, 0.04385504201680668) 87%
+  );
+
+  box-shadow: 0px 1px 1px #aaaaaa;
+  flex: 0 1 auto;
+  width: 500px;
+  justify-content: center;
+  min-width: 0;
+  border-radius: 5px;
+  padding: 2em 2.5em 1.5em;
+  transition: 250ms box-shadow ease-out, 250ms transform ease-out;
+}
+
+.form-input {
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  line-height: 1;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  padding: 0.75em;
+  width: calc(100% - 1.25em);
+  transition: 125ms border-color ease-out;
+}
+
+.form-input:hover {
+  border-color: #444;
+}
+
+.form-input:focus {
+  border-color: #2491eb;
+  outline: 1px solid #2491eb;
+}
+
+.form-message {
+  line-height: 1.5;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  min-height: 8em;
+  overflow: auto;
+  resize: vertical;
+}
+
+.form-btn {
+  background-color: #2491eb;
+  border-radius: 5px;
+  appearance: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1em;
+  letter-spacing: 0.025em;
+  margin-top: 1.25em;
+  display: inline-block;
+  padding: 0.6em;
+  transition: 125ms background-color ease-out, 125ms border-color ease-out;
+  width: calc(100% - 1.25em);
+}
+
+.form-btn:focus {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px #2491eb;
+  outline: none;
+}
+
+.form-btn:hover {
+  background-color: #1566a8;
+  border-color: #2491eb;
+  cursor: pointer;
+}
+
+.form-btn:active {
+  background-color: #1566a8;
+  border-color: #114e80;
+  position: relative;
+  top: 1px;
+
+  transition: none;
+}
+
+.is-sent-progress-bar {
+  height: 5px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    87deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 92%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  width: 50px;
+
+  animation: progress 1s 20 ease-in;
+}
+
+@keyframes progress {
+  from {
+    transform: translateX(10px);
+  }
+  to {
+    transform: translateX(360px);
+  }
+}
+.success {
+  background-color: #2491eb;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  .form-container:focus-within {
+    box-shadow: none;
+    transform: none;
+  }
+}

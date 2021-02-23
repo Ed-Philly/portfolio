@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useStyles } from "./styles/material-styles";
+import { Route, Switch, useLocation } from "react-router-dom";
 
-function App() {
+//material ui
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import "./App.css";
+
+//animation
+import { AnimatePresence } from "framer-motion";
+
+//components
+import Header from "./components/header/header";
+import Hero from "./components/hero/hero";
+import ProjectPage from "./components/projectpage/projectpage";
+import ContactPage from "./components/contactpage/contact-page";
+
+const App = () => {
+  const classes = useStyles();
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div className="app">
+      <Header />
+      <AnimatePresence initial={false} exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route exact path="/">
+            <Hero />
+          </Route>
+          <Route path="/projects" component={ProjectPage} />
+          <Route path="/contact" component={ContactPage} />
+        </Switch>
+      </AnimatePresence>
+
+      <footer className="app-footer">
+        <a href="https://www.linkedin.com/in/eddyedokpayi/">
+          {" "}
+          <LinkedInIcon className={classes.linkedIn} />
         </a>
-      </header>
+
+        <a href="https://github.com/Ed-Philly/">
+          <GitHubIcon className={classes.github} />
+        </a>
+      </footer>
     </div>
   );
-}
+};
 
 export default App;

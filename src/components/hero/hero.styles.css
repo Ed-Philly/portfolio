@@ -1,0 +1,73 @@
+.hero-container {
+  background-color: rgb(173, 218, 218);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  align-items: center;
+
+  font-size: 1.5em;
+}
+
+.project-title-header {
+  font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 48px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.project-introduction {
+  font-family: "Bad Script", cursive;
+  letter-spacing: 2px;
+  width: 70%;
+  text-align: center;
+}
+
+.action-to-project-btn {
+  text-decoration: none;
+  background-color: #2f80ed;
+  color: white;
+  border: 5px solid white;
+  padding: 1em 4rem;
+  font-size: 1.25rem;
+  position: relative;
+  font-weight: 900;
+  font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  transition: all 0.5;
+}
+.action-to-project-btn:hover {
+  text-decoration: none;
+  color: #2f80ed;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.action-to-project-btn::after,
+.action-to-project-btn::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-style: solid;
+  border-color: white;
+  transition: all 0.5s;
+}
+
+.action-to-project-btn::before {
+  top: -1.2rem;
+  left: -1.2rem;
+  border-width: 5px 0 0 5px;
+}
+
+.action-to-project-btn::after {
+  bottom: -1.2rem;
+  right: -1.2rem;
+  border-width: 0 5px 5px 0;
+}
+
+.action-to-project-btn:hover::after,
+.action-to-project-btn:hover::before {
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  border-top-color: #2f80ed;
+  border-right-color: #2f80ed;
+}
